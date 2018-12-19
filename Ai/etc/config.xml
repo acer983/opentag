@@ -1,0 +1,87 @@
+<config>    
+    <modules>
+        <Opentag_Ai>
+            <version>0.1.0</version>
+        </Opentag_Ai>
+    </modules>
+	
+<global>
+        <models>
+             <opentag_ai>
+                <class>Opentag_Ai_Model</class>
+                <resourceModel>opentag_ai_resource</resourceModel>
+            </opentag_ai>
+            <opentag_ai_resource>
+                <class>Opentag_Ai_Model_Resource</class>
+                <entities>
+                    <post_entity>
+                        <table>opentag_ai_post_entity</table>
+                    </post_entity>
+                    <post_entity_datetime>
+                        <table>opentag_ai_post_entity_datetime</table>
+                    </post_entity_datetime>
+                    <post_entity_decimal>
+                        <table>opentag_ai_post_entity_decimal</table>
+                    </post_entity_decimal>
+                    <post_entity_int>
+                        <table>opentag_ai_post_entity_int</table>
+                    </post_entity_int>
+                    <post_entity_text>
+                        <table>opentag_ai_post_entity_text</table>
+                    </post_entity_text>
+                    <post_entity_varchar>
+                        <table>opentag_ai_post_entity_varchar</table>
+                    </post_entity_varchar>
+                    <post_entity_char>
+                        <table>opentag_ai_post_entity_char</table>
+                    </post_entity_char>
+                </entities>
+            </opentag_ai_resource>
+        </models>
+        <helpers>
+            <opentag_ai>
+                <class>Opentag_Ai_Helper</class>
+            </opentag_ai>
+        </helpers>
+        <blocks>
+            <opentag_ai>
+                <class>Opentag_Ai_Block</class>
+            </opentag_ai>
+        </blocks>
+        <resources>
+            <opentag_ai_setup>
+                <setup>
+                    <module>Opentag_Ai</module>
+                    <class>Opentag_Ai_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </opentag_ai_setup>
+            <ai_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ai_write>
+            <ai_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ai_read>
+        </resources>
+    </global>
+
+<frontend>
+        <routers>
+            <ai>
+                <use>standard</use>
+                <args>
+                    <module>Opentag_Ai</module>
+                    <frontName>ai</frontName>
+                </args>
+            </ai>
+        </routers>    
+    </frontend>
+
+	
+</config>
